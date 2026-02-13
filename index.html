@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Lesson8/9</title>
+    <meta charset="utf-8">
+    <meta name="description" content="&lt;model-viewer&gt; template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="./styles.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <!-- <model-viewer> HTML element -->
+    <model-viewer src="model_variant.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls tone-mapping="neutral" poster="poster.png" shadow-intensity="1" camera-orbit="-29deg 66.71deg 0.4275m" field-of-view="30deg" auto-rotate id="gear">
+
+      <button class="Hotspot" slot="hotspot-1" data-position="0.0415000035059639m 0.17017668558932803m 0.009710901964837357m" data-normal="1m 0m 0m" data-visibility-attribute="visible" onMouseOver="addhotspot1()" onMouseOut="removehotspot1()">
+          <div class="HotspotAnnotation" id="hotspot1" style="visibility:hidden">Protector</div>
+
+      </button><button class="Hotspot" slot="hotspot-4" data-position="-0.014267989219810514m 0.12371995184322337m -0.02400000898020521m" data-normal="0m -3.0294627932906256e-7m -0.9999999999999541m" data-visibility-attribute="visible" onMouseOver="addhotspot4()" onMouseOut="removehotspot4()">
+>
+          <div class="HotspotAnnotation" id="hotspot4" style="visibility:hidden">Clip</div>
+
+      </button><button class="Hotspot" slot="hotspot-6" data-position="0.02486645435885775m 5.615889087096093e-9m 0.008042670989257934m" data-normal="0m -0.9999999999999541m 3.0294627932906256e-7m" data-visibility-attribute="visible" onMouseOver="addhotspot6()" onMouseOut="removehotspot6()">
+          <div class="HotspotAnnotation" id="hotspot6" style="visibility:hidden">Battery Opener</div>
+
+      </button><button class="Hotspot" slot="hotspot-7" data-position="0.039500003410969056m 0.12873176307978376m 0.00807549803253637m" data-normal="1m 0m 0m" data-visibility-attribute="visible" onMouseOver="addhotspot7()" onMouseOut="removehotspot7()">
+          <div class="HotspotAnnotation" id="hotspot7" style="visibility:hidden">Cover</div>
+
+      </button><button class="Hotspot" slot="hotspot-9" data-position="0.009764558166411174m 0.09300737231367187m -0.008999999476908944m" data-normal="0m 3.0294627932906256e-7m 0.9999999999999541m" data-visibility-attribute="visible" onMouseOver="addhotspot9()" onMouseOut="removehotspot9()">
+          <div class="HotspotAnnotation" id="hotspot9" style="visibility:hidden">Transparent Screen</div>
+      </button>
+
+      <div class="progress-bar hide" slot="progress-bar">
+          <div class="update-bar"></div>
+      </div>
+      <button slot="ar-button" id="ar-button">
+          View in your space
+      </button>
+      <div id="ar-prompt">
+          <img src="ar_hand_prompt.png">
+      </div>
+
+<div class="controls" style="position:absolute; bottom:0px; left:200px">
+  <div>Variant:
+  <button onClick="VBtn01()">01</button>
+  <button onClick="VBtn02()">02</button>
+    </div>
+  </div>
+
+<div style="position:absolute; bottom:30px; left:200px">
+<button onClick="setOrbit('0deg 75deg 0.4275m')">Front</button>
+<button onClick="setOrbit('-0.8288deg 0.0000573deg 0.4275m')">Top</button>
+<button onClick="setOrbit('-0.4145deg 180deg 0.4275m')">Bottom</button>
+
+    </model-viewer>  
+
+<script>
+  function addhotspot1(){
+  document.getElementById("hotspot1").style.visibility="visible"
+  }
+  function removehotspot1(){
+  document.getElementById("hotspot1").style.visibility="hidden";
+  }
+
+function addhotspot4(){
+  document.getElementById("hotspot4").style.visibility="visible"
+  }
+  function removehotspot4(){
+  document.getElementById("hotspot4").style.visibility="hidden";
+  }
+
+function addhotspot6(){
+  document.getElementById("hotspot6").style.visibility="visible"
+  }
+  function removehotspot6(){
+  document.getElementById("hotspot6").style.visibility="hidden";
+  }
+
+function addhotspot7(){
+  document.getElementById("hotspot7").style.visibility="visible"
+  }
+  function removehotspot7(){
+  document.getElementById("hotspot7").style.visibility="hidden";
+  }
+
+function addhotspot9(){
+  document.getElementById("hotspot9").style.visibility="visible"
+  }
+  function removehotspot9(){
+  document.getElementById("hotspot9").style.visibility="hidden";
+  }
+  </script>
+
+<script>
+  function setOrbit(orbit) {
+document.getElementById('gear').cameraOrbit = orbit;
+}
+  </script>
+
+<script>
+    function VBtn01() {
+  document.getElementById('gear').variantName = "v1";
+}
+  function VBtn02() {
+  document.getElementById('gear').variantName = "v2";}
+  
+  </script>
+
+    <script src="script.js"></script>
+    <!-- Loads <model-viewer> for browsers: -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  </body>
+</html>
